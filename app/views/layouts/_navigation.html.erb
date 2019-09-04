@@ -1,0 +1,42 @@
+
+<div class="ui small inverted menu">
+  <div class="ui container">
+    <div class="item">
+      <%= link_to 'Chatroom', root_path %>
+    </div>
+    <a class="item">
+      Messages
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui inverted teal buttons">
+          <div class="ui button">Account</div>
+          <div class="ui floating dropdown icon button">
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <% if !logged_in? %>
+                <div class="item"><i class="edit icon"></i>
+                  <%= link_to login_path do %>
+                    <font color="black"> Log in </font>
+                  <% end %>
+                </div>
+                <div class="item"><i class="hide icon"></i>Sign up</div>
+              <% else %>
+                <div class="item"><i class="delete icon"></i>
+                  <%= link_to logout_path, class: "btn btn-xs btn-logout", method: :delete do %>
+                    <font color="black"> Log out </font>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+          <div class="ui inverted blue buttons">
+            <div class="ui primary button">Sign up</div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
